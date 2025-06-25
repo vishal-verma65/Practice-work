@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Practice</title>
+
+    <style>
+        
+        *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body{
+        width: 100%;
+        height: 100%;
+        background-color: #333a37;
+        overflow-x: hidden;
+      }
+      .flex{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .container{
+        width: 100vw;
+        height: 40vh;
+        margin-bottom: 1rem;
+      }
+      .div{
+        background-color: #0f1f2b;
+      }
+      .scrambleText{
+        color: rgb(167, 182, 243);
+        font-size: 2rem;
+      }
+      .scrambleText2{
+        color: rgb(167, 243, 225);
+        font-size: 2rem;
+      }
+      .text-scramble--content{
+        color: rgb(243, 167, 211);
+        font-size: 2rem;
+        position: relative;
+      }
+      .text-scramble--text{
+        position: absolute;
+        transform: translate(-50% -50%);
+        max-width: 500px;
+
+        & img{
+            height: 2rem;
+            width: auto;
+            display: inline-block;
+        }
+        & span{
+            word-break: break-word;
+        }
+      }
+
+    </style>
+</head>
+<body>
+
+    <div class="div container flex">
+        <p class="scrambleText">
+            I am scramble text.
+        </p>
+    </div>
+
+    <div class="div container flex">
+        <p class="scrambleText2">
+            Hello, I am a developer. 
+        </p>
+    </div>
+
+    <div class="div container flex text-scramble--content">
+        <p id="scramble-text-original">
+            Mix it with ScrambleText. Animate using characters, numbers, UPPERCASE or lowercase.
+        </p>
+
+        <p class="text-scramble--text" aria-hidden="true">
+            <span id="scramble-text-1"></span>
+            <span id="scramble-text-2"></span>
+            <span id="scramble-text-3"></span>
+            <span id="scramble-text-4"></span>
+            <span id="scramble-text-5"></span>
+
+            <img id="scramble-cursor" src="https://assets.codepen.io/16327/scramble-cursor.png" alt="">
+        </p>
+
+    </div>
+    
+    
+    <script type="module" src="./text.js"></script>
+    
+</body>
+</html>
