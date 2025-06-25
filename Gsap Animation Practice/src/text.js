@@ -1,7 +1,8 @@
 import gsap from "gsap";
-import ScrambleTextPlugin from "gsap/ScrambleTextPlugin";
+import {ScrambleTextPlugin} from "gsap/ScrambleTextPlugin";
+import {SplitText} from "gsap/SplitText";
 
-gsap.registerPlugin(ScrambleTextPlugin);
+gsap.registerPlugin(ScrambleTextPlugin, SplitText);
 
 //gsap on container 1
 //*using default scrambleText 
@@ -78,4 +79,28 @@ tl.to("#scramble-text-1",{
         text: "lowercase.",
         chars: "lowerCase",
     }
-})
+});
+
+//*using SplitText 
+let split = SplitText.create(".split", {type: "chars"});
+
+gsap.from(split.chars,{
+    duration: 1,
+    y: 100,
+    autoAlpha: 0,
+    stagger: .05,
+
+});
+
+// SplitText.create(".split", {
+//   type: "chars",
+//   autoSplit: true,
+//   onSplit(self) {
+//     return gsap.from(self.chars, {
+//       duration: 1, 
+//       y: 100, 
+//       autoAlpha: 0, 
+//       stagger: 0.05
+//     });
+//   }
+// });
