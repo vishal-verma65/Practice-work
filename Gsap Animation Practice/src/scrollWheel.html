@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrollWheel animation Practice</title>
+
+    <style>
+        
+        *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body{
+        width: 100%;
+        height: 100%;
+        background-color: #333a37;
+        overflow-x: hidden;
+      }
+      .flex{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* text-align: center; */
+      }
+      .container{
+        width: 100vw;
+        height: 100vh;
+      }
+      .strip-box{
+        flex-shrink: 0;
+        width: 100%;
+        height: 6rem;
+        background-color: #39f600;
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        overflow-x: hidden;
+
+      }
+      .text{
+        flex-shrink: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 1rem;
+        transform: translateX(-100%);
+
+        & h2{
+            /* flex-shrink: 0; */
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            padding-right: 1rem;
+            font-weight: 900;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        & img{
+            height: 2.5rem;
+        }
+      }
+
+    </style>
+</head>
+<body>
+
+    <div class="container flex">
+        <div class="strip-box">
+            <div class="text">
+                <h2>Learning Gives You Confidence</h2>
+                <img src="/arrow-br.svg" alt="">
+            </div>
+
+            <div class="text">
+                <h2>Learning Gives You Confidence</h2>
+                <img src="/arrow-br.svg" alt="">
+            </div>
+            <div class="text">
+                <h2>Learning Gives You Confidence</h2>
+                <img src="/arrow-br.svg" alt="">
+            </div>
+            <div class="text">
+                <h2>Learning Gives You Confidence</h2>
+                <img src="/arrow-br.svg" alt="">
+            </div>
+
+            <div class="text">
+                <h2>Learning Gives You Confidence</h2>
+                <img src="/arrow-br.svg" alt="">
+            </div>
+            <div class="text">
+                <h2>Learning Gives You Confidence</h2>
+                <img src="/arrow-br.svg" alt="">
+            </div>
+        
+        </div>
+        
+    </div>
+    <div class="container flex"></div>
+    <script type="module" src="./scrollWheel.js"></script>
+    
+</body>
+</html>

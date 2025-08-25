@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlipPlugin Practice</title>
+
+    <style>
+        
+        *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body{
+        width: 100vw;
+        height: 100vh;
+        background-color: #333a37;
+        overflow-x: hidden;
+      }
+      .flex{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .flex-r{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .container{
+        width: 100%;
+        height: 100%;
+        background-color: #115c6d;
+      }
+      .text-box{
+        background-color: #d8c89e;
+      }
+      .text-span{
+        padding: 1rem;
+      }
+
+      .common-span{
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 900;
+        font-size: 5rem;
+      }
+      .original-container{
+        width: 100%;
+        height: 70%;
+        background-color: #a0f5ab;
+        display: flex;
+        position: relative;
+        overflow-x: hidden;
+        
+            gap: 1rem;
+            padding: 1rem;
+
+        .box{
+            width: 5rem;
+            height: 5rem;
+            background-color: #8b6fcd;
+            
+        }
+
+        .newContainer{
+            padding: 1rem;
+            position: absolute;
+            top: 10px;
+            right: -100px;
+            width: 30rem;
+            height: 20rem;
+            background-color: #c4d266;
+        }
+      }
+      button{
+        width: 5rem;
+        height: 2rem;
+        margin: 1rem;
+        border: none;
+        background-color: #acd4e5;
+      }
+
+      .originalBox{
+        padding: 1rem;
+        width: 10rem;
+        height: 10rem;
+        background-color: #2c86ac;
+        color: #ffffff;
+      }
+      .newBox{
+        padding: 1rem;
+        width: 20rem;
+        height: 20rem;
+        border: 1px solid #ffffff;
+      }
+      .anotherBox{
+        width: 350px;
+        height: 400px;
+        background-color: #fff;
+        margin-bottom: 1rem;
+      }
+
+      .para{
+        background-color: #a0f5ab;
+        text-align: center;
+        align-content: center;
+        padding: 1rem;
+      }
+      .para-div{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 2rem ;
+        width: 100%;
+      }
+       .para-div.reorder{
+        flex-direction: column;
+      }
+
+      .para-box{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 2rem;
+
+        & :nth-child(1){
+            background-color: #b8f412;
+        }
+        & :nth-child(2){
+            background-color: #12f421;
+        }
+        & :nth-child(3){
+            background-color: #12f4c7;
+        }
+        & :nth-child(4){
+            background-color: #f412b4;
+        }
+      }
+      .para-c{
+        width: 10rem;
+        height: 10rem;
+      }
+
+    
+
+    </style>
+</head>
+
+    <div class="container flex">
+
+        
+        <div class="original-container">
+            <div class="box flex">Flip</div>
+            <div class="newContainer">New container</div>
+        </div>
+
+        <button>Change</button>
+
+        <!-- <div class="text-box flex">
+            <div class="box"></div>
+            <span class="text-span">
+                <span class="span-a common-span">A</span>
+                <span class="span-n common-span">n</span>
+                <span class="span-i common-span">i</span>
+                <span class="span-m common-span">m</span>
+                <span class="span-a common-span">a</span>
+                <span class="span-t common-span">t</span>
+                <span class="span-i common-span">i</span>
+                <span class="span-o common-span">o</span>
+                <span class="span-n common-span">n</span>
+            </span>
+        </div> -->
+
+    </div>
+
+    <div class="container flex">
+        <div class="contentContainer flex-r">
+            <div class="originalBox">
+                <div class="contentBox">
+                    <h3>Heading</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, eaque!</p>
+                </div>
+            </div>
+            <div class="newBox"></div>
+        </div>
+        <button class="flip-btn">Flip</button>
+        <div class="anotherBox"></div>
+    </div>
+
+    <div class="container flex">
+        <div class="para-div">
+            <div class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, ad.</div>
+            <div class="para">Id reiciendis architecto laudantium ex suscipit perspiciatis quidem aspernatur ea.</div>
+            <div class="para">Doloribus nemo quaerat sequi sit dolorum provident dolore, iure culpa.</div>
+            <div class="para">Consectetur odit ad ratione adipisci eaque deserunt quae nostrum sequi?</div>
+        </div>
+        <button class="change-btn">Change layout</button>
+    </div>
+
+    <div class="container flex">
+        <div class="para-box">
+            <div class="para-c para1"></div>
+            <div class="para-c para2"></div>
+        </div>
+        <button class="swap-btn">swap</button>
+    </div>
+
+    
+    <script type="module" src="./flipPlugin.js"></script>
+    
+</body>
+</html>
